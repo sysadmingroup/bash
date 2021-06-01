@@ -1,0 +1,32 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 18-March-2021
+
+# Purpose: To check if the user is root. If not root then check if the user has sudo access.
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+clear
+echo "Hello, we are checking how rooty are you" #Welcome message
+sleep 3
+userid=$(id -u) #Store output of ID command to check for Root 
+
+if [[ $userid -eq 0 ]] #Check if current user is root
+then
+	echo " You are rooty enough, you may proceed"
+	exit 0
+else
+	sudo -v 1>/dev/null 2>/dev/null
+	if [[ $? -eq 0 ]] #Check if user has sudo access
+	then
+		echo "You are rooty enough, you may proceed"
+	else
+		echo "You are not rooty enough, please check with your administrator and come back"
+	fi
+fi
+
+

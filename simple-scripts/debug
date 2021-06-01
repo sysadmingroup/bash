@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#set -n		#Checks the syntax of the script.Uncomment to apply
+#set -x		#Prints the commsnd before executing,Uncomment to apply
+#set -e		#Exits the script if any command fails.Uncomment to apply
+
+
+clear
+pwd
+date
+u=$(whoami)
+echo ""
+echo " This is a debug script"
+echo ""
+echo "The user is $u"
+#pwoerwrkwoksfsf  	#Uncomment to check functions of debugging
+
+
+

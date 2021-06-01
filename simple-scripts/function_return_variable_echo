@@ -1,0 +1,30 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:24.03.21
+
+# Purpose: Returning the value of a variable using echo
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+return_value_number()				#Creating a function in which we will assign a variable with an integer value
+{
+	local a=9				#Assigning the variable
+	echo "$a"				#Using echo to display the value of the variable
+}
+x=$(return_value_number)			#Storing the output of the function in a variable
+
+return_value_string()				# The same process is adopted but this time for a string
+{						#+ Echo can be used to return both integers and strings
+	local b="Hello World"			#++ unlike "return"
+	echo "$b"
+}
+y=$(return_value_string)
+echo " Returning the number value: $x"		# Returns the local variable value
+echo " Returning the string value: $y"		# Returns the local variable value
+exit
+

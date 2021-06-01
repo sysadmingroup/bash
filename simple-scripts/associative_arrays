@@ -1,0 +1,27 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:23.03.21
+
+# Purpose: Simple associative arrays
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+# Associative arrays are arrays where the index values are strings. 
+
+declare -A sample		# declaring an associative array you have to use the declare option with -A
+sample=([name]=Bash [version]=4.4 [system]=Linux)
+
+echo " ${sample[@]}" 	#Print all values of the array
+
+echo " ${#sample[@]}"   #Print the length of the array
+
+echo " ${!sample[@]}" 	#Print the index values 
+
+echo " ${sample[name]}" #Print array value corresponding to index value name 
+
+

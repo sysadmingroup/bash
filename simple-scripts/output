@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo " Welcome to a sample bash script "
+echo ""
+echo " This script will display the disk usage on the screen and will also save it in a file"
+echo ""
+echo "####################__Disk Usage__###################"
+df -h >> output.txt
+cat output.txt 
+
+

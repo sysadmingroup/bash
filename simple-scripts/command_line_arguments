@@ -1,0 +1,25 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 2021-03-13
+
+# Purpose: A script to showcase command line arguments
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+if [[ $# -lt 1 ]] # $# is the total number of command line arguments. This logic checks that a minimum of one argument is supplied.
+then
+	echo " Usage of $0 is $0 followed by argument " # $0 is the name of the script. $1 is the first argument, $2 is the second and there on. We inform the user how the script should us executed.
+	exit 1  # Exit the script with error code if no command line argument is given.
+fi
+for test in $@ #$@ are all the command arguments
+do
+	echo "Your command line argument is $test" #Prints each command line argument.
+done
+exit 0
+

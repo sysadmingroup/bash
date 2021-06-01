@@ -1,0 +1,24 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:24.03.21
+
+# Purpose: Script Decoration with printf command
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+clear
+
+title=Welcome				# Title of the script, can be anything
+cols=$(tput cols) 			# Get the value of columns
+title_size=${#title}			# Calculates the size of the title, later used to calculate the midpoint of the screen
+span=$((($cols+$title_size)/2))		# Get the average so as to place the title in the centre
+printf "%${cols}s" " " | tr " " "-"	# Converts the blank spaces into the character of your choice to create a line
+printf "%${span}s\n" "$title"		# Places the titles in the middle of the screen
+printf "%${cols}s" " " | tr " " "-"	# Converts the blank spaces into the character of your choice to create a line
+exit
+
+

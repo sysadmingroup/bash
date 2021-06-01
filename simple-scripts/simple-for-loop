@@ -1,0 +1,20 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 20.03.2021
+
+# Purpose: Simple For Loop to print a sequence of numbers
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+# A loop is a block of code that keeps executing till the condition is true.
+
+for file in {1..100}  # I have used globbing , this basically means numbers 1 to 100.   
+do
+	echo "$file" 
+done
+

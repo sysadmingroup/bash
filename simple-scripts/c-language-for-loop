@@ -1,0 +1,32 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 20-03-2021
+
+# Purpose: Using C language for loop to make a simple seconds timer
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+clear
+
+echo " Welcome to a simple seconds timer using C Language for loop" # Welcome Message
+
+read -p "Please enter the seconds that you want your timer to be set to: " sec  # Store the seconds entered by the user in variable sec
+
+for ((count=$sec;count>=0;count--)) # count is taken as a variable and is assigned the valur of $sec. the condition is set till value of count is greater or equal to zero.
+				    # + finally the decrement of one signalled by "--" is supplied.
+
+do
+	clear 				# Clears the screen so that it looks good for the countdown
+	echo "$count"			# Displays the current value of the timer
+	sleep 1				# Add for one sec to match the timer speed, else the loop will not match the second speed.
+	clear				# Another clear to give an impression that a fresh number is being displayed on the screen.
+
+done
+echo "Your Time is UP"			#Final message to inform the user that the countdown is done
+exit
+
+

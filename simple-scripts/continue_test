@@ -1,0 +1,26 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 21.03.21
+
+# Purpose: Simple Continue command to exclude the loop for a certain value.
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+
+for con_test in {1..10}		# Set variable con_test to hold values from 1 to 10
+do
+	if [[ $con_test -eq 5 ]]	# Condition set which will be referred to continue command
+	then
+		continue	# If the above condition is met then continue will execute
+	fi
+	echo "$con_test"	# Command that executes in the for loop 
+done
+echo " If all numbers except 5 were printed, the script worked as designed"	#Final message displaying success
+exit
+

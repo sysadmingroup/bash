@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#set -n
+#set -x
+#set -e
+read -p"Enter name:" name
+u=${name}
+echo $u
+
+

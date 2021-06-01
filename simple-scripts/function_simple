@@ -1,0 +1,34 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:24.03.21
+
+# Purpose: Simple use of function
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+take_input()					# Declared a function called take_input
+{
+	read -p "Enter your first number: " n1	# The block of code that the function represents
+	read -p "Enter your second number: " n2
+}
+addition()					# Declared second function called addition
+{
+	sum=$((n1+n2))				# Block of code for the function
+	echo "Addition is $sum"
+}
+substraction()					# Declared third function
+{
+	sub=$((n1-n2))
+	echo "Substraction is $sub"
+}
+take_input					# Invoked the first function	
+addition					# Invoked the second function 
+substraction					# Invoked the third function 
+exit
+

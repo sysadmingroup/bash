@@ -1,0 +1,27 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 21-03-2021
+
+# Purpose: Simple break usage to stop For loop once it satisfies a condition
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+for break_test in {1..10}	# set variable value from numbers from 1 to 10
+do
+	if [[ $break_test -ge 6 ]]	# set condition for break. If no is greater or equal to 6 to print numbers from 1 to 5
+	then
+		break			# Break command to exit the loop if the condition is met
+	else 
+		echo " $break_test"	# Continues the loop till the condition is met
+	fi
+done
+echo "Thanks to break we printed numbers till 5" #Simple message to display that break worked
+
+
+

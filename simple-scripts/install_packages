@@ -1,0 +1,53 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date: 21-03-2021
+
+# Purpose: Install multiple packages using for loop , if else condition to check root privelege and use positional parameters
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear                                
+user_check=$(id -u)	# Use variable to store UID of current user
+if [[ $user_check -ne 0 ]]	# Check if UID is 0
+then
+	sudo -v &>/dev/null
+	if [[ $? -ne 0 ]]		# If not root then check if the User has sudo privelege
+  		then 
+			echo " You either need to be root or have sudo privelege to execute this script"
+			exit 1
+	fi
+fi
+
+if [[ $# -eq 0 ]]	#Check if user has supplied positional parameters
+then
+	echo " Usage of $0 is: $0 name of package(s) you want to install"	# Inform the user of the correct usage
+	exit 2
+fi
+for package in $@	# Creat for loop for all positional parameters
+do
+	which $@ &>/dev/null	# Check if package is already installed
+	if [[ $? -eq 0 ]]
+	then 
+		echo "Package $@ is already installed"
+		exit 0
+	else
+		echo "Installing package $@"	
+	fi
+		yum install -y $@ &>/dev/null	#Installing package
+		if [[ $? -eq 0 ]]	# Check if installation was successful
+		then
+			echo " Package $@ is installed"
+		else
+			echo " Something did not go according to plan. Please check log"
+			exit 3
+		fi
+	
+	done
+	exit 0
+
+

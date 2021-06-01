@@ -1,0 +1,24 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:23.03.21
+
+# Purpose:Showcase While loop with condition
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+begin=1		#set base number
+while [[ $begin -le 10 ]]	# Condition, till this condition is true, while loop will function
+	do
+		echo "$begin"
+		((begin++))	#increase value by 1 to base number
+		sleep 1
+		clear
+	done
+exit
+

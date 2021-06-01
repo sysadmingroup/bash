@@ -1,0 +1,26 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:23.03.21
+
+# Purpose: Creates executable bash files with a template in it. Name of file is supplied from positional parameters.
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+if [[ -z $@ ]];then			#Check if command line argument is given
+	echo "Usage of $0: $0 file_name_to_be_created"
+	exit 1				#Exit after displaying usage
+fi
+for file in $@				#Store values of command line arguments in varaible file
+do
+	touch $file			#Create File
+	chmod +x $file			#Make it executable
+	cat template > $file		#Add template to it
+echo " $file created in $(pwd)"		#Display location where files were created
+done
+exit $?
+

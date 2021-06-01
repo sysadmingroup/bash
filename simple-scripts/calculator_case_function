@@ -1,0 +1,49 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:24.03.21
+
+# Purpose: Arithmetic Calculator using Case logic and function 
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+take_input()						# Declare first function which gets repeated in each choice
+{
+	read -p "Enter your first Number: " n1
+	read -p "Enter your second Number: " n2
+}
+clear
+echo "Bash Arithmetic Calculator"
+echo -e " [a] Addition \n [b] Substraction \n [c] Multiplication \n [d] Divsion "	#Display choices for the user
+read -p " Enter your choice: " choice							#Save the choice made by the user in a variable
+case $choice in 									#Case logic begins
+	[aA])										#[] used to prempt error in case user types in Captial.
+		take_input								#Invoking the function to register user's choice of numbers
+		result=$((n1+n2))
+		echo "Result of Addition is $result"
+		;;									#Part of syntax of case to end one option
+	[bB])
+		take_input
+		result=$((n1-n1))
+		echo "Result of Substraction is $result"
+		;;
+	[cC])
+		take_input
+		result=$((n1*n2))
+		echo " Result of Multiplication is $result"
+		;;
+	[dD])
+		take_input
+		result=$((n1/n2))
+		echo "Result of Division is $result"
+		;;
+	*)										# Use of * to capture any option chosen by the user
+		echo " Invalid choice"							#+which is not part of the original list of options
+		exit
+		;;
+esac											# Case logic ends. Part of syntax
+exit
+

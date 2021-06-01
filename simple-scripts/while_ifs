@@ -1,0 +1,21 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:23.3.21
+
+# Purpose: Using custom field separator with IFS command
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+clear
+old_ifs=$IFS		# storing the original IFS value into old_ifs
+cat while_ifs.txt | awk 'NR!=1 {print}' | while IFS="," read f1 f2	# using awk to give while command the input without header
+do
+	echo "$f1"	# displaying field value. Action could also be taken on it if it were for example an IP address.
+done
+IFS=$old_ifs 		# Returning the original value of IFS which is a space.
+exit
+

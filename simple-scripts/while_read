@@ -1,0 +1,25 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:23.03.21
+
+# Purpose: Using while to read contents of a file and perform action on it. 
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+while read website		# while and read are commands, they go together. website is the variable
+do
+	ping -c 1 $website &>/dev/null	#while is reading the lines from the file and each line is which stored in the variable website is being pinged.
+	if [[ $? -eq 0 ]];then		#Checks if the website is reachable by examining exit code status of previous command.
+	echo " $website is reachable"   #display message of reachability
+else
+	echo "$website is unreachable"	#display message of unreachability
+	fi
+done < while_read.txt			# at the end of the loop we have to supply the file from which while will read the commands.	
+exit
+

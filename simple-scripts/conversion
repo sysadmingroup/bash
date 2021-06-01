@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#set -n
+#set -x
+#set -e
+name="hello"
+u=$(name^^)
+echo "$name in upper case is $u"
+

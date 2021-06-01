@@ -1,0 +1,28 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:24.03.21
+
+# Purpose: Local and global variables in functions
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+clear
+local_variable()				# create a variable
+{
+	y=55					# Even though we have assigned a variable in the function, it is considered GLOBAL
+	echo " The value of variable x is: $x"	# Display the value of x
+	local x=67				# Set a LOCAL variable applicable only for the function
+	local p=68				# Set a LOCAL variable applicable only for the function
+
+}
+x=5
+local_variable
+echo " The value of variable y is: $y"					# Value is displayed since the variable is GLOBAL
+echo " The value of variable x after invoking the function is: $x"	# Will contiue to display 5 since the local variable is never called.
+echo " The value of variable p is: $p"					# Will always be empty since the local variable is never called.
+echo " Please have a look at the script to understand the output"	
+

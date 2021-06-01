@@ -1,0 +1,23 @@
+#!/usr/bin/env bash #this makes the script portable
+# set -n 
+# set -x
+# set -e 
+
+# Author: Doctype Human
+
+# Date:23.03.21
+
+# Purpose: Showcase while infinity loop 
+
+# License: GNU GENERAL PUBLIC LICENSE. VERSION 3, 2007
+
+clear
+while true		# set loop to infinity alternate way is while : 
+do
+	clear
+	echo " To" Infinity and Beyond"
+	clear
+
+done
+exit
+
